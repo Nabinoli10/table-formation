@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<style>
+  tr:nth-child(even) {
+    background-color: pink;
+  }
+
+</style>
+</head>
+<body>
+<table class="center" id="naxTable" border="1"> 
+  <tr>
+    <td>ap1 bp</td> 
+    <td>ap1 dp</td>
+  </tr> 
+  <tr>
+    <td>ap2 bp</td> 
+    <td>ap2 dp</td>
+  </tr> 
+  <tr>
+    <td>ap3 bp</td> 
+    <td>ap3 dp</td>
+  </tr> 
+  <tr>
+    <td>ap4 bp</td> 
+    <td>ap4 dp</td>
+  </tr> 
+  <tr>
+    <td>ap5 bp</td> 
+    <td>ap5 dp</td>
+  </tr> 
+</table>
+<br> 
+<div class="center">
+  <input type="button" onclick="insertRowBottom()" value="Insert row">  
+  <input type="button" onclick="deleteRowTop()" value="Delete row">  
+</div>
+</br>
+<script>
+var x = 5;
+
+function insertRowBottom() {
+  var optbl = document.getElementById("naxTable");
+  x++;
+  var ro = optbl.insertRow(-1);
+  var tablecell1 = ro.insertCell(0);
+  var tablecell2 = ro.insertCell(1);
+  tablecell1.innerHTML = "ap " + x + " bp";
+  tablecell2.innerHTML = "ap " + x + " dp";
+}
+
+function deleteRowTop() {
+  var optbl = document.getElementById("naxTable");
+  if (optbl.rows.length > 0) {
+    optbl.deleteRow(0);
+  } else {
+    alert("No more content left!");
+  }
+}
+</script>
+</body>
+</html>
